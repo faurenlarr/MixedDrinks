@@ -6,7 +6,7 @@ module.exports = {
     "<li><img src='http://www.fillmurray.com/460/300' /></li>",
     "<li><h2>User Name</h2></li>",
     "</ul>",
-    "<h3>Favorite Recipes</h3>",
+    // "<h3>Favorite Recipes</h3>",
     "<section id='recipes'>",
     "</section>",
     "</div>"
@@ -32,24 +32,20 @@ module.exports = {
   ].join(''),
   navigation: [
     "<ul id='nav'>",
-    "<li><h1>alcoh<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/76022-200.png'>me</h1></li>",
+      "<li><h1>alcoh<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/76022-200.png'>me</h1></li>",
       "<li><a id='home' href='#home'>Home</a></li>",
       "<li><a id='profile' href='#profile'>My Profile</a></li>",
       "<li><a id='logout' href='#'>Logout</a></li>",
     "</ul>"
   ].join(""),
   form: [
-    "<section class='form'>",
     "<form class='drinkform'>",
-    "<h2>What's in your fridge?</h2>",
      "<input type='text' id='ingredientOne' class='ingredients' placeholder='optional ingredients'>",
      "<input type='text' id='ingredientTwo' class='ingredients' placeholder='optional ingredients' >",
      "<input type='text' id='ingredientThree' class='ingredients' placeholder='optional ingredients'>",
      "<input type='text' id='ingredientFour' class='ingredients' placeholder='optional ingredients'>",
      "<button class='send-stuff'>submit</button>",
-   "</form>",
-   "</section>",
-   "<div class='content'></div>",
+   "</form>"
  ].join(""),
  sideUser: [
 
@@ -81,7 +77,6 @@ module.exports = {
  ].join(""),
  login:[
    "<div class='box'>",
-
    "<h1 class='title'>alcoh<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/76022-200.png'>me</h1></i>",
    "<input class='username' placeholder='username'></input>",
    "<input type='password' class='password initialPassword' placeholder='password'></input>",
@@ -93,5 +88,7 @@ module.exports = {
    "<li class='createUser'><button>Not a user? Create an account!</button></li>",
    "</div>"
  ].join(""),
-
+littleUserView: [
+  "<h6><%= username %></h6>"
+].join("")
 };

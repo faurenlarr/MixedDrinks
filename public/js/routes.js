@@ -24,30 +24,16 @@ module.exports = Backbone.Router.extend ({
 
  homePage: function(){
     new layoutView();
-    // $('#layoutView').html("");
-    // var formHTML = new FormView();
-    // var headerHTML = new HeaderView();
-    // console.log(formHTML);
-    // $('#layoutView').append(headerHTML.render().el);
-    // $('#layoutView').append(formHTML.render().el);
-    // $('#layoutView').find('.box').remove();
-    // $('#layoutView').find('.toTheLeft').addClass('hidden');
-    // $('#layoutView').find('.profile').remove();
-    // $('#layoutView').find('.box').remove();
-    // $('#layoutView').find('.toTheLeft').addClass('hidden');
-    // $('#layoutView').find('.profile').remove();
+    $('#layoutView').find('.box').remove();
+    $('#layoutView').find('.toTheLeft').addClass('hidden');
+    $('body').find('.profilebox').remove();
    },
-
-
   profilePage: function(){
     var favorites = new FavoriteCollection();
     favorites.fetch().then(function(data){
-      console.log(data);
-      console.log('MODELS', favorites);
       new FavoritesCollectionView({collection: favorites});
     });
-
-    // $('#layoutView').html("");
+    $('#side').html("");
     var users = new UserCollection();
     users.fetch().then(function() {
       new UserCollectionView({collection: users});
@@ -58,21 +44,10 @@ module.exports = Backbone.Router.extend ({
       $('.headerbox').html(headerHTML.render().el);
       var profileHTML = new ProfileView();
       $('.profilebox').html(profileHTML.render().el);
-      $('.content').find('article').remove();
-
+      $('.drinkList').find('article').remove();
   },
-   loginPage: function(){
-     var loginHTML = new LoginView();
-     $('#layoutView').html(loginHTML.render().el);
-   },
-
-
-
-
-
-   updateView: function(view) {
-     if(this.view && this.view.render()) {
-       this.view.render();
-     }
-   }
+ loginPage: function(){
+   var loginHTML = new LoginView();
+   $('#layoutView').html(loginHTML.render().el);
+ }
 });
