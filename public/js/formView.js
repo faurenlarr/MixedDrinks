@@ -31,18 +31,18 @@ module.exports = Backbone.View.extend({
       ingredientFourID
     ];
 
-    var drinkCollection = new DrinkCollection();
-    drinkCollection.fetch().then(function(data) {
-      var newData = [];
-        for (var i = 0; i < data.length; i++) {
-          for(var prop in data[i]){
-            if(data[i][prop] === null){
-              data[i][prop] = "";
-            }
-          }
-        }
-        new DrinkCollectionView({collection: drinkCollection});
-    });
+    // var drinkCollection = new DrinkCollection();
+    // drinkCollection.fetch().then(function(data) {
+    //   var newData = [];
+    //     for (var i = 0; i < data.length; i++) {
+    //       for(var prop in data[i]){
+    //         if(data[i][prop] === null){
+    //           data[i][prop] = "";
+    //         }
+    //       }
+    //     }
+    //     new DrinkCollectionView({collection: drinkCollection});
+    // });
   },
   template: _.template(tmpl.form),
   render: function () {

@@ -7,27 +7,15 @@ var DrinkView = require('./modelView');
 
 
 module.exports = Backbone.View.extend({
-<<<<<<< HEAD
-  el: '#recipes',
-=======
   el: '.drinkList',
->>>>>>> 726aef837b1ab431ae8d13c0373ae6bc8e73fc56
   initialize: function(){
     this.addAllDrinks();
   },
   addOneDrink: function(drinkModel){
     var drinkView = new DrinkView({model: drinkModel});
     this.$el.append(drinkView.render().el);
-<<<<<<< HEAD
-    console.log(this);
-    return this;
   },
   addAllDrinks: function(){
-    console.log('this', this);
-=======
-  },
-  addAllDrinks: function(){
->>>>>>> 726aef837b1ab431ae8d13c0373ae6bc8e73fc56
     _.each(this.collection.models, this.addOneDrink, this);
   }
 });
@@ -63,17 +51,8 @@ module.exports = Backbone.View.extend({
     this.$el.append(userView.render().el);
   },
   addAllUsers: function() {
-<<<<<<< HEAD
-    // $('#side').find('.userinfo').remove();
-
     _.each(this.collection.models, this.addUser, this);
   },
-
-
-=======
-    _.each(this.collection.models, this.addUser, this);
-  },
->>>>>>> 726aef837b1ab431ae8d13c0373ae6bc8e73fc56
 });
 
 },{"./userView":23,"backbone":24,"jquery":25,"underscore":26}],4:[function(require,module,exports){
@@ -90,11 +69,7 @@ module.exports = Backbone.Collection.extend({
 
 },{"./model":15,"backbone":24}],5:[function(require,module,exports){
 arguments[4][1][0].apply(exports,arguments)
-<<<<<<< HEAD
-},{"./collection":4,"./collectionView":5,"./formView":10,"./headerView":11,"./loginView":13,"./modelView":16,"backbone":24,"dup":1,"jquery":25,"underscore":26}],6:[function(require,module,exports){
-=======
 },{"./modelView":16,"backbone":24,"dup":1,"jquery":25,"underscore":26}],6:[function(require,module,exports){
->>>>>>> 726aef837b1ab431ae8d13c0373ae6bc8e73fc56
 var Backbone = require('backbone');
 var DrinkModel = require('./model');
 var FavoritesModel = require('./favoritesModel');
@@ -192,52 +167,7 @@ module.exports = Backbone.View.extend({
   },
   onSubmitIngredients: function(event){
     event.preventDefault();
-<<<<<<< HEAD
-    console.log(layoutView);
-    //console.log('SUBMIT INGREDIENTS BUTTON');
-    $('.content').html("");
-    var drinkCollection = new DrinkCollection();
-    drinkCollection.fetch().then(function(data){
-      for(var i = 0; i < data.length; i++){
-        ////ASSIGNS NULL INGREDIENT TO EMPTY STRING //
-        var combinedIngredients = '';
-        if(data[i].ingredient1 === null){
-          data[i].ingredient1 = '';
-        }
-        if(data[i].ingredient2 === null){
-          data[i].ingredient2 = '';
-        }
-        if(data[i].ingredient3 === null){
-          data[i].ingredient3 = '';
-        }
-        if(data[i].ingredient4 === null){
-          data[i].ingredient4 = '';
-        }
-        if(data[i].ingredient5 === null){
-          data[i].ingredient5 = '';
-        }
-        if(data[i].ingredient6 === null){
-          data[i].ingredient6 = '';
-        }
-        if(data[i].ingredient7 === null){
-          data[i].ingredient7 = '';
-        }
-        if(data[i].ingredient8 === null){
-          data[i].ingredient8 = '';
-        }
-        if(data[i].ingredient9 === null){
-          data[i].ingredient9 = '';
-        }
-        if(data[i].ingredient10 === null){
-          data[i].ingredient10 = '';
-        }
-        if(data[i].ingredient11 === null){
-          data[i].ingredient11 = '';
-        }
-        if(data[i].ingredient12 === null){
-          data[i].ingredient12 = '';
-        }
-=======
+
     /// SETS ALL UPPER CASE//
     var ingredientOneID = $('#ingredientOne').val().toUpperCase();
     var ingredientTwoID = $('#ingredientTwo').val().toUpperCase();
@@ -250,20 +180,19 @@ module.exports = Backbone.View.extend({
       ingredientThreeID,
       ingredientFourID
     ];
->>>>>>> 726aef837b1ab431ae8d13c0373ae6bc8e73fc56
 
-    var drinkCollection = new DrinkCollection();
-    drinkCollection.fetch().then(function(data) {
-      var newData = [];
-        for (var i = 0; i < data.length; i++) {
-          for(var prop in data[i]){
-            if(data[i][prop] == null){
-              data[i][prop] = "";
-            }
-          }
-        }
-        new DrinkCollectionView({collection: drinkCollection});
-    });
+    // var drinkCollection = new DrinkCollection();
+    // drinkCollection.fetch().then(function(data) {
+    //   var newData = [];
+    //     for (var i = 0; i < data.length; i++) {
+    //       for(var prop in data[i]){
+    //         if(data[i][prop] === null){
+    //           data[i][prop] = "";
+    //         }
+    //       }
+    //     }
+    //     new DrinkCollectionView({collection: drinkCollection});
+    // });
   },
   template: _.template(tmpl.form),
   render: function () {
@@ -283,6 +212,8 @@ var tmpl = require('./templates');
 
 module.exports = Backbone.View.extend({
   initialize: function () {
+    var headerHTML = new HeaderView();
+    this.$el.append(headerHTML.render().el);
   },
 
   template: _.template(tmpl.navigation),
@@ -314,9 +245,9 @@ module.exports = Backbone.View.extend({
     el: '#layoutView',
   initialize: function(){
     $('#layoutView').html("");
-    var headerHTML = new HeaderView();
-    var formHTML = new FormView();
-    this.$el.append(headerHTML.render().el);
+    // var headerHTML = new HeaderView();
+    // var formHTML = new FormView();
+    // this.$el.append(headerHTML.render().el);
     this.$el.append(formHTML.render().el);
 
   }
@@ -668,11 +599,7 @@ module.exports = {
 arguments[4][2][0].apply(exports,arguments)
 },{"./model":15,"./userModel":22,"backbone":24,"dup":2}],21:[function(require,module,exports){
 arguments[4][3][0].apply(exports,arguments)
-<<<<<<< HEAD
-},{"./templates":19,"./userCollection":20,"./userModel":22,"./userView":23,"backbone":24,"dup":3,"jquery":25,"underscore":26}],22:[function(require,module,exports){
-=======
 },{"./userView":23,"backbone":24,"dup":3,"jquery":25,"underscore":26}],22:[function(require,module,exports){
->>>>>>> 726aef837b1ab431ae8d13c0373ae6bc8e73fc56
 var Backbone = require('backbone');
 var $ = require('jquery');
 var _ = require('underscore');

@@ -7,6 +7,8 @@ var tmpl = require('./templates');
 
 module.exports = Backbone.View.extend({
   initialize: function () {
+    var headerHTML = new HeaderView();
+    this.$el.append(headerHTML.render().el);
   },
 
   template: _.template(tmpl.navigation),
